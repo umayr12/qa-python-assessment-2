@@ -31,8 +31,10 @@
 # How does a for loop iterate through a string?
 
 def one(string):
-    return ""
-
+    outstr = ''
+    for character in string:
+        outstr = outstr + char + char
+    return outstr
 # -------------------------------------------------------------------------------------------------------------------------------------------------
 
     # <QUESTION 2>
@@ -52,7 +54,12 @@ def one(string):
 
 
 def two(number):
-    return False
+    if number > 1:
+        for i in range(2,number):
+        if (number % i) == 0:
+            return False
+     else:
+         return True
 
 # -------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -72,7 +79,11 @@ def two(number):
 
 
 def three(a):
-    return 1
+    n1 = int("%s" % a)
+    n2 = int("%s%s" % (a, a))
+    n3 = int("%s%s%s" % (a, a, a))
+    n4 = int("%s%s%s%s" % (a, a, a, a))
+    return n1 + n2 + n3 + n4
 
 # -------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -104,7 +115,8 @@ def three(a):
 
 
 def four(string1, string2):
-    return ""
+    out1 = ''.join(''.join(f for f in tup) for tup in zip(string1, string2))
+    return out1
 
 # -------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -124,7 +136,8 @@ def four(string1, string2):
 
 
 def five():
-    return []
+    import random
+    list = [random.randint(1,200) for _ in range(1,5) if _ %2 ==0]
 
 # -------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -145,8 +158,13 @@ def five():
     # There are no hints for this question.
 
 
-def six(string):
-    return False
+    def six(string):
+        string = string.lower()
+        if string.endswith("py"):
+            return True
+        else:
+            return False
+
 
 # -------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -173,8 +191,13 @@ def six(string):
 
 
 def seven(a, b, c):
-    return False
-
+    x = abs(a - b)
+    y = abs(a - c)
+    z = abs(b - c)
+    if (x == y) or (x == z) or (y == z):
+        return True
+    else:
+        return False
 # -------------------------------------------------------------------------------------------------------------------------------------------------
 
     # <QUESTION 8>
@@ -194,7 +217,10 @@ def seven(a, b, c):
 
 
 def eight(string,  a):
-    return ""
+    begin = string[:a]  
+    end = string[a+1:]  
+    return begin + end
+
 
 # -------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -214,7 +240,11 @@ def eight(string,  a):
 
 
 def nine(string1, string2):
-    return False
+    if string1 in string2 or string2 in string1:
+        return True
+    else:
+        return False
+ 
 
 # -------------------------------------------------------------------------------------------------------------------------------------------------
 
